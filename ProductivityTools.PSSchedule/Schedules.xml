@@ -1,0 +1,19 @@
+<Schedules>
+  <Schedule>
+    <Name>Powershell12</Name>
+	<Triggers>
+		<Trigger>-Once -At 16:40</Trigger>
+	</Triggers>
+    <Command>get-eventlog -logname Application -After ((get-date).AddDays(-1)) | Export-Csv -Path c:\applog.csv -Force -NoTypeInformation</Command>
+    <Description>1234</Description>
+  </Schedule>
+  <Schedule>
+    <Name>GetProcess</Name>
+	<Triggers>
+		<Trigger>-Once -At 16:40</Trigger>
+		<Trigger>-Daily -At 9:00</Trigger>
+	</Triggers>
+    <Command>get-process > d:\process.txt</Command>
+    <Description>1234</Description>
+  </Schedule>
+</Schedules>
